@@ -4,15 +4,11 @@ import { AxiosPromise } from 'axios';
 import { HasId } from '../Model';
 
 export class ApiSync<T extends HasId> implements Sync<T> {
-  
-  usersUrl: string;
 
-  constructor (public rootUrl: string) {
-    this.usersUrl = `${this.rootUrl}/users`;
-  }
+  constructor (private url: string) {}
 
   fetch = (id: number): AxiosPromise => {
-    return axios.get(`${this.usersUrl}/${id}`);
+    return axios.get(`${this.url}/${id}`);
   }
 
   save = (data: T): AxiosPromise => {
@@ -20,9 +16,9 @@ export class ApiSync<T extends HasId> implements Sync<T> {
     const { id } = data;
 
     if (id) {
-      return axios.put(`${this.usersUrl}/${id}`, data);
+      return axios.put(`${this.url}/${id}`, data);
     } else {
-      return axios.post(this.usersUrl, data);
+      return axios.post(this.url, data);
     }
   }
 }
