@@ -5,14 +5,14 @@ import { HasId } from '../Model';
 
 export class ApiSync<T extends HasId> implements Sync<T> {
 
-  constructor (private url: string) {}
+  constructor(private url: string) { }
 
   fetch = (id: number): AxiosPromise => {
     return axios.get(`${this.url}/${id}`);
   }
 
   save = (data: T): AxiosPromise => {
-    
+
     const { id } = data;
 
     if (id) {

@@ -1,9 +1,10 @@
-import { User, UserProps } from "./modules/User/User";
-import { Collection } from "./modules/Model/Collection";
+import { User, UserProps } from "./modules/Models/User";
+import { Collection } from "./modules/Models/Collection";
+import { UserEdit } from "./modules/Views/UserEdit";
 
 const userUrl = 'http://localhost:3000/users';
 
-// const user = User.buildApiUser({name: 'Stan', age: 18}, userUrl);
+const user = User.buildApiUser({ name: 'Stan', age: 18 }, userUrl);
 
 // user.on('save', () => {
 //   console.log('User saved:');
@@ -21,13 +22,22 @@ const userUrl = 'http://localhost:3000/users';
 
 // user.set({name: 'Stan3'});
 
-const userCollection = User.buildUserCollection(userUrl);
+// const userCollection = User.buildUserCollection(userUrl);
 
-userCollection.on('change', (): void => {
-  console.log(userCollection.models);
-});
+// userCollection.on('change', (): void => {
+//   console.log(userCollection.models);
+// });
 
-userCollection.fetch();
+// userCollection.fetch();
+
+
+const root = document.getElementById('root');
+
+if (root) {
+  const userEdit = new UserEdit(root, user);
+  userEdit.render();
+  console.log(userEdit.regions);
+}
 
 
 
