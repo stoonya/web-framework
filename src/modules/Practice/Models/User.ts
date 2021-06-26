@@ -1,8 +1,8 @@
-import { ModelAttributes } from "../Models/Attributes/ModelAttributes";
-import { Collection } from "../Models/Collection";
-import { ModelEvents } from "../Models/Events/ModelEvents";
-import { Model } from "../Models/Model";
-import { ApiSync } from "../Models/Sync/ApiSync";
+import { ModelAttributes } from "../../Framework/Models/Attributes/ModelAttributes";
+import { Collection } from "../../Framework/Models/Collection";
+import { ModelEvents } from "../../Framework/Models/Events/ModelEvents";
+import { Model } from "../../Framework/Models/Model";
+import { ApiSync } from "../../Framework/Models/Sync/ApiSync";
 
 export interface UserProps {
   id?: number;

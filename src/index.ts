@@ -1,7 +1,7 @@
-import { User, UserProps } from "./modules/Models/User";
-import { Collection } from "./modules/Models/Collection";
-import { UserEdit } from "./modules/Views/UserEdit";
-import { UserList } from "./modules/Views/UserList";
+import { User, UserProps } from "./modules/Practice/Models/User";
+import { Collection } from "./modules/Framework/Models/Collection";
+import { UserEdit } from "./modules/Practice/Views/UserEdit";
+import { UserList } from "./modules/Practice/Views/UserList";
 
 const userUrl = 'http://localhost:3000/users';
 
@@ -19,7 +19,7 @@ const root = document.getElementById('root');
 
 
 
-// ~~~ build and render user collection ~~~
+//~~~ build and render user collection ~~~
 //
 //
 // const userCollection = User.buildUserCollection(userUrl);

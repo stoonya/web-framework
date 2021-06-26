@@ -1,5 +1,5 @@
 import { User, UserProps } from "../Models/User";
-import { CollectionView } from "./CollectionView";
+import { CollectionView } from "../../Framework/Views/CollectionView";
 import { UserDetails } from "./UserDetails";
 
 export class UserList extends CollectionView<User, UserProps> {
